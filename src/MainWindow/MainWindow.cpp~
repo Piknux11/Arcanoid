@@ -1,0 +1,32 @@
+#include "MainWindow.hpp"
+
+MainWindow::MainWindow() 
+    : sf::RenderWindow(sf::VideoMode(500,500), "Hello, World") {
+        
+        this.setFramerateLimit(60);
+    
+    }
+
+MainWindow::MainWindow(const std::string& title, const float& width, const float& height) 
+    : sf::RenderWindow(sf::VideoMode(width, height), title) {
+        
+        this.setFramerateLimit(60);
+    
+    } 
+
+void MainWindow::run() {
+    while (isOpen()) {
+        sf::Event event;
+        while (pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                close();
+            }
+        }
+
+        clear(sf::Color::Black);
+
+        // Aquí puedes dibujar
+
+        display();
+    }
+}
