@@ -1,13 +1,14 @@
 #include "MainWindow.hpp"
 
 MainWindow::MainWindow() 
-  : sf::RenderWindow(sf::VideoMode({500,500}), "Arcanoid", sf::Style::Default, sf::State::Fullscreen) {
+  : sf::RenderWindow(sf::VideoMode({500,500}), "Arcanoid", sf::Style::Default, sf::State::Windowed) {
         
-  this->setFramerateLimit(60);
+  this->setFramerateLimit(game::FRAMES);
     
 }
 
 void MainWindow::run() {
+  Ball *ball = new Ball();
   while (this->isOpen()) {
         
     while (const std::optional event = this->pollEvent()) {
@@ -16,10 +17,14 @@ void MainWindow::run() {
       }
     }
 
-    this->clear(sf::Color::Black);
+    this->clear(sf::Color::White);
     
-    // Aquí puedes dibujar
+    this->draw(*ball);
+
+    ball->autoMove();
     
     this->display();
   }
+
+  delete ball;
 }
