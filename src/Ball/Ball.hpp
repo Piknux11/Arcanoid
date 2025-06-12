@@ -8,6 +8,12 @@ public:
   Ball();
 
   void autoMove();
+
+  void collisionWall(sf::Vector2f &);
+
+private:
+  sf::Vector2f velocity;
+  sf::Vector2f acceleration;
 };
 
 #endif
