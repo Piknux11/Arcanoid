@@ -1,8 +1,0 @@
-#include "Ball.hpp"
-
-Ball::Ball()
-  : sf::CircleShape(50.0f)
-{
-  this->setFillColor(sf::Color(149, 165, 166));
-  this->setPosition(100.0f, 100.0f);
-}

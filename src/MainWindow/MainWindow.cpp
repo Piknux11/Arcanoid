@@ -1,14 +1,21 @@
 #include "MainWindow.hpp"
+#include "../GameProperties.hpp"
+#include "../Ball/Ball.hpp"
+#include "../Vaus/Vaus.hpp"
 
 MainWindow::MainWindow() 
   : sf::RenderWindow(sf::VideoMode({500,500}), "Arcanoid", sf::Style::Default, sf::State::Windowed) {
         
-  this->setFramerateLimit(game::FRAMES);
+  this->setFramerateLimit(Game::FRAMERATE);
     
 }
 
-void MainWindow::run() {
+
+void MainWindow::WindowRun() {
+  
   Ball *ball = new Ball();
+  Vaus *vaus = new Vaus(this->getSize());
+  
   sf::Vector2f sizeWindow = static_cast<sf::Vector2f>(this->getSize());
   
   while (this->isOpen()) {
@@ -20,14 +27,19 @@ void MainWindow::run() {
     }
 
     this->clear(sf::Color::Black);
-    
+
+    this->draw(*vaus);
     this->draw(*ball);
 
-    ball->autoMove();
-    ball->collisionWall(sizeWindow);
+    vaus->MoveVaus();
+
+    ball->AutoMove();
+    ball->CollisionWall(sizeWindow);
+    ball->CollisionVaus(*vaus);
     
     this->display();
   }
 
   delete ball;
+  delete vaus;
 }

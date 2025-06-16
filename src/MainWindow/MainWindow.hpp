@@ -4,14 +4,11 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <string>
 
-#include "../Header.hpp"
-#include "../Ball/Ball.hpp"
-
 class MainWindow : public sf::RenderWindow {
 public:
     MainWindow();    
 
-    void run();
+    void WindowRun();
 private:
 
 

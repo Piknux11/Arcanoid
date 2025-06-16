@@ -1,12 +1,9 @@
-#include <SFML/Graphics.hpp>
 #include "MainWindow/MainWindow.hpp"
 
-int main()
-{
-
+int main() {
   MainWindow window;
 
-  window.run();
+  window.WindowRun();
   
   return EXIT_SUCCESS;
 }
