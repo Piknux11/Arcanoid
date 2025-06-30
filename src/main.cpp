@@ -1,9 +1,14 @@
-#include "MainWindow/MainWindow.hpp"
+/**
+ * @file main.cpp
+ */
+
+#include "../include/MainWindow.h"
 
 int main() {
-  MainWindow window;
 
-  window.WindowRun();
+  Game::MainWindow window({500,500});
+
+  window.RunWindow();
   
   return EXIT_SUCCESS;
 }

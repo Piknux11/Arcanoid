@@ -1,0 +1,33 @@
+/*
+ *
+ * @file MainWindow.h
+ * @brief Esta es una clase que derivara de sf::Window
+ *
+ */
+
+#ifndef MAINWINDOW_H
+#define MAINEINDOW_H
+
+#include <SFML/Window.hpp>
+
+namespace game {
+
+  class MainWindow : public sf::Window {
+    public:
+        /*
+         *@brief Constructor por defecto
+         */
+        MainWindow();
+        /*
+         *@brief Constructor 
+         *@param windowSize es el tamanio de la ventana
+         */\
+        MainWindow(const sf::Vector2u &windowSize);
+
+    
+    
+  };
+  
+}
+
+#endif
