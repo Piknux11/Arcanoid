@@ -64,7 +64,6 @@ namespace Game {
      */
     bool RunGame();
 
-    std::optional<sf::Clock> clock;
   };
   
 }
